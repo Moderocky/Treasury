@@ -1,0 +1,6 @@
+name: Treasury
+main: 'mx.kenzie.treasury.Treasury'
+version: '1.0.0'
+description: "Money and economy management."
+api-version: '1.20'
+load: STARTUP
