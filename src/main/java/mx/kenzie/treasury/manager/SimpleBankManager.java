@@ -4,9 +4,10 @@ import mx.kenzie.treasury.Money;
 import mx.kenzie.treasury.Price;
 
 import java.io.*;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
 public class SimpleBankManager implements Money, Serializable {
@@ -19,7 +20,7 @@ public class SimpleBankManager implements Money, Serializable {
 
     public SimpleBankManager(File file) {
         this.file = file;
-        this.balanceCache = new ConcurrentHashMap<>();
+        this.balanceCache = Collections.synchronizedMap(new LinkedHashMap<>());
     }
 
     @Override
